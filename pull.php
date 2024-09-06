@@ -1,7 +1,7 @@
 <?php
  $url = 'https://youtube.googleapis.com/super_stickers/sticker_ids_to_urls.csv';
  $git = '/usr/bin/git';
- $dest = './list.json';
+ $dest = 'list.json';
  $ch = curl_init();
  curl_setopt($ch, CURLOPT_URL, $url);
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -38,7 +38,7 @@
  if ($s !== $o)
  {
   file_put_contents($dest, $s);
-  exec($git.' add '.$dest);
+  exec($git.' add ./'.$dest);
   exec($git.' commit -m "Sticker Update on '.date('Y-m-d', $t).'"');
   exec($git.' tag "v'.date('Y.m.d', $t).'"');
   exec($git.' push');
