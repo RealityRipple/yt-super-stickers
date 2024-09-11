@@ -1,6 +1,6 @@
 <?php
  $url = 'https://youtube.googleapis.com/super_stickers/sticker_ids_to_urls.csv';
- $git = '/usr/bin/git';
+ $git = '/usr/bin/git -C '.$GLOBALS['siteRoot'].'/rrs/git/yt-super-stickers/';
  $dest = $GLOBALS['siteRoot'].'/rrs/git/yt-super-stickers/list.json';
  $ch = curl_init();
  curl_setopt($ch, CURLOPT_URL, $url);
